@@ -68,6 +68,6 @@ async def root(month):
         return {"message": "Success","status":200,"data":result}
     return {"message": "Not a valid month","status":401}
 
-if __name__ == '__main__':
-    # app.run_server(debug=True, port=5050)
-    uvicorn.run(app,debug=True)
+# if __name__ == '__main__':
+#     # app.run_server(debug=True, port=5050)
+#     uvicorn.run(app, debug=True)
