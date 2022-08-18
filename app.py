@@ -9,6 +9,10 @@ warnings.filterwarnings("ignore")
 from fastapi import FastAPI
 from pydantic import BaseModel
 import uvicorn
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = FastAPI()
 
@@ -21,10 +25,10 @@ mon = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
 #     end_date: str
 #     month: str
 
-host = 'mysqldb.cbnidl7thuhz.us-east-1.rds.amazonaws.com'
-user = 'admin'
-password = 'odunayo0412'
-database = 'panalyst'
+host = os.getenv('HOST')
+user = os.getenv('USER')
+password = os.getenv('PASSWORD')
+database = os.getenv('DATABASE')
 engine = create_engine(f'mysql+pymysql://{user}:{password}@{host}/{database}')
 
 @app.get("/updated-data")
