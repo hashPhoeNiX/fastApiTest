@@ -31,6 +31,7 @@ password = os.getenv('PASSWORD')
 database = os.getenv('DATABASE')
 engine = create_engine(f'mysql+pymysql://{user}:{password}@{host}/{database}')
 
+
 @app.get("/updated-data")
 async def root():
     data = pd.read_sql('select * from driver',engine)
