@@ -51,7 +51,8 @@ async def root():
 
 
 
-@app.get("/get-driver-score/{month}")
+# @app.get("/get-driver-score/{month}")
+@app.api_route('/predict', methods=['GET'])
 async def root(month):
     #month = "August"
     if month in mon:
